@@ -26,3 +26,11 @@ export const getAllForms = async () => {
   const forms: Form[] = await response.json();
   return forms;
 };
+
+export const getFormById = async (id: string) => {
+  const response = await fetch(`${API_URL}/api/v1/forms/${id}`);
+  const forms: Form = await response.json();
+  return forms;
+};
+
+
