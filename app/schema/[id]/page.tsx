@@ -12,7 +12,6 @@ const page = async ({ params, searchParams }: { params: { id: string }, searchPa
     values = await getFormById(complete);
   }
   const data = await getFormTypeById(id);
-  console.log(data);
   return <main className="h-min-dvh flex items-center flex-col justify-center">
     <h1 className="mt-6 text-[5vw] font-bold">{data.form_type_name}</h1>
     <p className="mt-4 mx-4 font-semibold text-lg">{data.title_field.field_description}</p>

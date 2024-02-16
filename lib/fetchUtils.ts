@@ -21,27 +21,31 @@ export const getFormTypeById = async (id: string) => {
   return form;
 };
 
-export const getAllForms = async () => {
+export const getAllForms: () => Promise<Form[]> = async () => {
   const response = await fetch(`${API_URL}/api/v1/forms`);
-  const forms: Form[] = await response.json();
-  return forms;
+  const forms: Form[] | Form = await response.json();
+  if (Array.isArray(forms)) {
+    return forms;
+  }
+  return [forms];
 };
 
 export const getFormById = async (id: string) => {
   const response = await fetch(`${API_URL}/api/v1/forms/${id}`);
+  if (response.status === 404) {
+    notFound();
+  }
   const forms: Form = await response.json();
   return forms;
 };
 
-
 export const postForm = async (postForm: Form) => {
-
   const options: RequestInit = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(postForm)
+    body: JSON.stringify(postForm),
   };
 
   const response = await fetch(`${API_URL}/api/v1/forms/`, options);
