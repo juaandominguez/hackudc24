@@ -44,5 +44,7 @@ export const postForm = async (postForm: Form) => {
     body: JSON.stringify(postForm)
   };
 
-  await fetch(`${API_URL}/api/v1/forms/`, options);
+  const response = await fetch(`${API_URL}/api/v1/forms/`, options);
+
+  return response;
 };
