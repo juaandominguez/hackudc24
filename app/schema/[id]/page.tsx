@@ -1,4 +1,5 @@
 import InputSelector from "@/components/inputs/inputSelector";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { getFormById, getFormTypeById } from "@/lib/fetchUtils";
@@ -61,7 +62,7 @@ const page = async ({ params, searchParams }: { params: { id: string }, searchPa
           </div>
         ))
       )}
-
+      <Button className="my-10 w-full ">Submit form</Button>
     </div>
   </main>;
 };
