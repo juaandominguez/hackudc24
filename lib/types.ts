@@ -8,7 +8,10 @@ interface FormField {
   field_readonly: boolean;
   field_default_value: string;
   field_group: string;
-  field_validations: {};
+  field_validations: {
+    format?: string;
+    options?: string[];
+  };
   field_dependent_on?: {
     field_id: number;
     field_value: string;

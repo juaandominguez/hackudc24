@@ -1,3 +1,4 @@
+import InputSelector from "@/components/inputs/inputSelector";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { getFormById, getFormTypeById } from "@/lib/fetchUtils";
@@ -23,17 +24,19 @@ const page = async ({ params, searchParams }: { params: { id: string }, searchPa
           {
             data.form_groups?.map((group) => (
               data.form_fields.filter((field) => field.field_group === group.group_id).map((field) => (
-                <> <Label key={field.field_id} className="mt-4 mx-4">{field.field_description}</Label>
-                  <Input
+                <div key={field.field_id} className="flex flex-col items-start justify-center space-y-3">
+                  <Label className="mt-4 mx-4">{field.field_description}</Label>
+                  <InputSelector
                     id={field.field_name}
                     type={field.field_type}
                     required={field.field_required}
-                    readOnly={field.field_readonly}
+                    readonly={field.field_readonly}
                     defaultValue={field.field_default_value}
-                    value={values?.form_fields.find((value) => value.field_id === field.field_id)?.field_value}
-                  // validations={field.field_validations}
+                    pattern={field?.field_validations?.format}
+                    name={field.field_name}
+                    options={field?.field_validations?.options}
                   // dependentOn={field.field_dependent_on || null}
-                  /></>
+                  /></div>
               ))
             ))
           }</>
@@ -42,16 +45,19 @@ const page = async ({ params, searchParams }: { params: { id: string }, searchPa
 
         data.form_fields?.map((field) => (
           <div key={field.field_id}>
-            <Label className="mt-4 mx-4">{field.field_description}</Label>
-            <Input
-              id={field.field_name}
-              type={field.field_type}
-              required={field.field_required}
-              readOnly={field.field_readonly}
-              defaultValue={field.field_default_value}
-            // validations={field.field_validations}
-            // dependentOn={field.field_dependent_on || null}
-            />
+            <div key={field.field_id} className="flex flex-col items-start justify-center space-y-3">
+              <Label className="mt-4 mx-4">{field.field_description}</Label>
+              <InputSelector
+                id={field.field_name}
+                type={field.field_type}
+                required={field.field_required}
+                readonly={field.field_readonly}
+                defaultValue={field.field_default_value}
+                pattern={field?.field_validations?.format}
+                name={field.field_name}
+                options={field?.field_validations?.options}
+              // dependentOn={field.field_dependent_on || null}
+              /></div>
           </div>
         ))
       )}
