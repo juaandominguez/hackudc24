@@ -34,3 +34,15 @@ export const getFormById = async (id: string) => {
 };
 
 
+export const postForm = async (postForm: Form) => {
+
+  const options: RequestInit = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(postForm)
+  };
+
+  await fetch(`${API_URL}/api/v1/forms/`, options);
+};
