@@ -9,7 +9,7 @@ const Main = async () => {
             <h2 className='text-center mt-16 mb-4 text-4xl font-semibold'>Form schemas</h2>
             <div className='flex flex-row flex-wrap justify-center max-w-[1200px] m-auto'>
                 {forms?.map((form) => (
-                    <Link href={`/form/${form.form_type_id}`} key={form.form_type_id}>
+                    <Link href={`/schemas/${form.form_type_id}`} key={form.form_type_id}>
                         <Card
                             className="w-[350px] h-[100px] mt-6 mx-2 hover:cursor-pointer" key={form.form_type_id}>
                             <CardHeader>
