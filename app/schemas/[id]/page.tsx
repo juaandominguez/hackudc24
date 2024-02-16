@@ -1,10 +1,16 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { getFormTypeById } from "@/lib/fetchUtils";
+import { getFormById, getFormTypeById } from "@/lib/fetchUtils";
+import { Form } from "@/lib/types";
 import React from "react";
 
-const page = async ({ params }: { params: { id: string } }) => {
+const page = async ({ params, searchParams }: { params: { id: string }, searchParams: { complete: string } }) => {
+  const { complete } = searchParams;
   const { id } = params;
+  let values: Form;
+  if (complete) {
+    values = await getFormById(complete);
+  }
   const data = await getFormTypeById(id);
   console.log(data);
   return <main className="h-min-dvh flex items-center flex-col justify-center">
@@ -25,6 +31,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                     required={field.field_required}
                     readOnly={field.field_readonly}
                     defaultValue={field.field_default_value}
+                    value={values?.form_fields.find((value) => value.field_id === field.field_id)?.field_value}
                   // validations={field.field_validations}
                   // dependentOn={field.field_dependent_on || null}
                   /></>

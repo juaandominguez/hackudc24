@@ -45,5 +45,5 @@ export interface Form {
   form_fields: {
     field_id: number;
     field_value: string;
-  };
+  }[];
 }
