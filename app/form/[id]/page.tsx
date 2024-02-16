@@ -1,11 +1,11 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { getFormById } from "@/lib/fetchUtils";
+import { getFormTypeById } from "@/lib/fetchUtils";
 import React from "react";
 
 const page = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
-  const data = await getFormById(id);
+  const data = await getFormTypeById(id);
   console.log(data);
   return <main className="h-min-dvh flex items-center flex-col justify-center">
     <h1 className="mt-6 text-[5vw] font-bold">{data.form_type_name}</h1>

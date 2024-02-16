@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card, CardHeader, CardTitle } from './ui/card'
-import { getAllForms } from '@/lib/fetchUtils'
+import { getAllFormTypes } from '@/lib/fetchUtils'
 import Link from 'next/link'
 const Main = async () => {
-    const forms = await getAllForms()
+    const forms = await getAllFormTypes()
     return (
         <div className='flex flex-row flex-wrap justify-center'>
             {forms?.map((form) => (
