@@ -11,7 +11,7 @@ This policy applies to all contributors, maintainers, and users participating in
 
 # 3. Reporting Security Issues:
 
-If you discover a security vulnerability, please follow responsible disclosure practices by reporting it to our designated security contact at [security@example.com]. Provide a detailed description of the issue and, if possible, steps to reproduce it. We appreciate your cooperation in keeping our projects secure.
+If you discover a security vulnerability, please follow responsible disclosure practices by reporting it to our team. Provide a detailed description of the issue and, if possible, steps to reproduce it. We appreciate your cooperation in keeping our projects secure.
 
 # 4. Collaboration and Community Involvement:
 
