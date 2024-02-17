@@ -1,4 +1,5 @@
 import { getFormById, getFormTypeById } from "@/lib/fetchUtils";
+import Link from "next/link";
 
 export default async function ({ params }: { params: { id: String } }) {
   const { id } = params;
@@ -39,6 +40,7 @@ export default async function ({ params }: { params: { id: String } }) {
           )
         )}
       </div>
+      <Link href="/" className="my-6 bg-blue-500 p-6 rounded-md"> Home Page</Link>
     </div>
   );
 }
