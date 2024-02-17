@@ -39,7 +39,7 @@ export const getFormById = async (id: string) => {
   return forms;
 };
 
-export const postForm = async (postForm: Form) => {
+export const postForm = async (postForm: {}) => {
   const options: RequestInit = {
     method: "POST",
     headers: {

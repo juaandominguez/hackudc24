@@ -26,11 +26,31 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid Types" }, { status: 400 });
   }
   const { form_id, form_type_id, title_field, form_fields } = data;
-  if (!form_id || !form_type_id || !title_field || !form_fields) {
+  if (!form_type_id || !title_field || !form_fields) {
     return NextResponse.json(
       { error: "Missing required fields" },
       { status: 400 }
     );
+  }
+  if(!form_id){
+    return supabase
+    .from("form")
+    .insert({
+      form_type_id,
+      title_field,
+      form_fields,
+    })
+    .then(({ data, error }) => {
+      if (error) {
+        return NextResponse.json({ error }, { status: 500 });
+      } else {
+        console.log(data);
+        return NextResponse.json(
+          { message: "Form type created" },
+          { status: 201 }
+        );
+      }
+    });
   }
   return supabase
     .from("form")
