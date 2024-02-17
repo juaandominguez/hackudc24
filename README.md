@@ -2,10 +2,49 @@
 
 ![This is an alt text.](/public/foto1.png "Page hero.")
 
-Our API manages dynamic forms, allowing to create and retrieve forms based on predefined types. It is designed to be used in mobile applications that require the creation and management of dynamic forms, such as those used in data collection and surveys.
+# FormFlow Transformer
+
+FormFlow  is an open-source application that transforms JSON data provided by an API into user-friendly forms. Users can create new forms and retrieve previously submitted forms through the application.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
+
+## Overview
+FormAPI Transformer simplifies the process of converting JSON data from an API into user-friendly forms. It empowers users to create custom forms and conveniently retrieve their submitted data.
+
+## Features
+- Transform JSON data into user-friendly forms.
+- Create and customize forms according to user needs.
+- Retrieve and view previously submitted forms.
+
+## Getting Started
+To get started with FormAPI Transformer, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/formapi-transformer.git
+
+2. Install dependencies:
+
+npm install
+
+3. Configure your API credentials and settings in the .env file.
+
+4. Run the application:
+
+npm start
+
 
 ## Usage
-The API is provided as as an OpenAPI 3.0 specification that can be used to generate server and client code in a variety of languages or as a reference for manual implementation or extension.
+Once the application is running, you can access it through your browser. Follow the on-screen instructions to transform JSON data, create new forms, and retrieve submitted forms.
 
 ## API Endpoints
 
@@ -77,3 +116,19 @@ Fields can be dependent on other fields, meaning that their visibility or requir
 - checkbox: Allows selection of boolean values.
 
 These field types cover a variety of data input and selection needs within the form, providing flexibility and functionality to effectively capture information, but can be extended to include additional types as needed.
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute, please follow the [Contribution Guidelines](./CONTRIBUTING.md).
+
+
+## Authors
+
+-Juan Domínguez Rodríguez
+-Javier Miguel Sánchez
+-Diego Dopazo García
+-Xabier Xoán Carricoba Muñoa
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
