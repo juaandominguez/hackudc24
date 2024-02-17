@@ -1,8 +1,9 @@
 import React from "react";
-import { Card, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { getAllFormTypes, getAllForms } from "@/lib/fetchUtils";
 
 import Link from "next/link";
+import CustomCard from "./custom-card";
 const Main = async () => {
     const forms = await getAllFormTypes();
     const completedForm = await getAllForms();
@@ -14,14 +15,7 @@ const Main = async () => {
             <div className="flex flex-row flex-wrap justify-center max-w-[1200px] m-auto">
                 {forms?.map((form) => (
                     <Link href={`/schema/${form.form_type_id}`} key={form.form_type_id}>
-                        <Card
-                            className="w-[350px] h-[100px] mt-6 mx-2 hover:cursor-pointer"
-                            key={form.form_type_id}
-                        >
-                            <CardHeader>
-                                <CardTitle>{form.form_type_name}</CardTitle>
-                            </CardHeader>
-                        </Card>
+                        <CustomCard name={form.form_type_name} />
                     </Link>
                 ))}
             </div>
@@ -31,14 +25,7 @@ const Main = async () => {
             <div className="flex flex-row flex-wrap justify-center max-w-[1200px] m-auto">
                 {completedForm?.map((form) => (
                     <Link href={`/form/${form.form_id}`} key={form.form_id}>
-                        <Card
-                            className="w-[350px] h-[100px] mt-6 mx-2 hover:cursor-pointer"
-                            key={form.form_id}
-                        >
-                            <CardHeader>
-                                <CardTitle>{form.title_field}</CardTitle>
-                            </CardHeader>
-                        </Card>
+                        <CustomCard name={form.title_field} />
                     </Link>
                 ))}
             </div>

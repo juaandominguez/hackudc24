@@ -17,6 +17,12 @@ export async function GET(
       if (error) {
         return NextResponse.json({ error }, { status: 500 });
       } else {
+        if (data.length === 0) {
+          return NextResponse.json(
+            { error: "No form type found" },
+            { status: 404 }
+          );
+        }
         return NextResponse.json(data);
       }
     });
