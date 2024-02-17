@@ -20,7 +20,7 @@ export async function GET(
         if (data.length === 0) {
           return NextResponse.json({ error: "No form found" }, { status: 404 });
         }
-        return NextResponse.json(data);
+        return NextResponse.json(data[0]);
       }
     });
 }
