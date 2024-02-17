@@ -1,56 +1,44 @@
+# Security Policy
 
-## Open Source Security Policy
+## Supported Versions
+We prioritize the security of our users. Currently, we provide security updates for the following versions:
 
-# 1. Introduction:
+- [Version 1.0.0](#) (Latest Stable Release)
+- [Version 1.0.1](#) (Latest Patch Release)
 
-Our organization is committed to fostering an open and collaborative environment for our open-source projects. This Security Policy outlines the principles, guidelines, and best practices to ensure the security of our codebase while encouraging community involvement and contribution.
+If you are using an older version, it is recommended to upgrade to the latest stable release to benefit from security enhancements.
 
-# 2. Scope:
+## Reporting a Vulnerability
+If you discover a security vulnerability within our project, please follow these steps to responsibly disclose it:
 
-This policy applies to all contributors, maintainers, and users participating in the development and use of our open-source projects.
+1. **Privately Notify Us:** Send an email to security@example.com with details of the vulnerability. Do not disclose the issue publicly until it has been addressed.
 
-# 3. Reporting Security Issues:
+2. **Provide Details:** Include as much information as possible, including a description of the vulnerability, steps to reproduce it, and any supporting materials.
 
-If you discover a security vulnerability, please follow responsible disclosure practices by reporting it to our team. Provide a detailed description of the issue and, if possible, steps to reproduce it. We appreciate your cooperation in keeping our projects secure.
+3. **Cooperate with Us:** We appreciate your cooperation and assistance in verifying and addressing the vulnerability.
 
-# 4. Collaboration and Community Involvement:
+## Disclosure Policy
+Our team is committed to promptly addressing and fixing security vulnerabilities. To ensure responsible disclosure, we follow these guidelines:
 
-We welcome and encourage the community to actively contribute to our open-source projects. To maintain a secure environment, we ask contributors to adhere to the following guidelines:
+- We acknowledge receipt of the vulnerability report within 48 hours.
+- We work on resolving the issue and keeping the reporter informed about the progress.
+- Once the issue is fixed, we coordinate with the reporter on an agreed-upon disclosure date.
+- We release a security advisory and update the project accordingly.
 
-Code Review:
-All contributions, including bug fixes, new features, and updates, are subject to thorough code review. Reviewers will pay particular attention to security implications.
+## Security Update Process
+When a security vulnerability is identified and confirmed, we follow this update process:
 
-Testing:
-Contributions must include relevant tests to ensure the proposed changes do not introduce security vulnerabilities or regressions.
+1. **Develop a Fix:** Our team works on developing a fix for the identified vulnerability.
 
-Documentation:
-Clearly document any security-sensitive aspects of the code, APIs, or configurations to assist users and future contributors.
+2. **Testing:** The fix undergoes thorough testing to ensure it effectively addresses the vulnerability without introducing new issues.
 
-# 5. Security Best Practices:
+3. **Release:** A new version containing the security fix is released.
 
-All contributors are expected to follow security best practices, including but not limited to:
+4. **Notification:** Users are notified about the security update through release notes, blog posts, and other communication channels.
 
-Secure Coding Standards:
-Adhere to established secure coding practices to mitigate common vulnerabilities such as injection attacks, buffer overflows, and cross-site scripting (XSS).
+5. **Upgrade Instructions:** Clear instructions on how to upgrade to the secure version are provided to users.
 
-Dependency Management:
-Regularly review and update project dependencies to address security vulnerabilities in third-party libraries.
+## Contact
+For security-related matters, please contact us at javier.miguel@udc.es.
 
-Data Protection:
-Handle sensitive data with care, encrypt where necessary, and avoid unnecessary data collection and storage.
-
-# 6. Continuous Monitoring and Improvement:
-
-Our organization is committed to ongoing security monitoring and continuous improvement. We will promptly address and rectify any identified security issues, and regular security reviews will be conducted to assess the overall security posture of the project.
-
-# 7. Compliance with Legal and Ethical Standards:
-
-All contributors are expected to comply with legal and ethical standards. Do not engage in activities that violate laws or ethical norms, including but not limited to unauthorized access, data breaches, or malicious code injection.
-
-# 8. Modification of the Security Policy:
-
-This security policy may be revised periodically to adapt to evolving security needs. Contributors are encouraged to review the policy regularly for updates.
-
-By participating in our open-source projects, contributors agree to abide by this Security Policy. We appreciate the collaborative efforts of the community in maintaining a secure and transparent development environment.
-
-Thank you for your commitment to the security of our open-source projects.
+Thank you for helping us keep our project secure!
