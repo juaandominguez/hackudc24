@@ -30,7 +30,7 @@ const Main = async () => {
             </h2>
             <div className="flex flex-row flex-wrap justify-center max-w-[1200px] m-auto">
                 {completedForm?.map((form) => (
-                    <Link href={`/schema/${form.form_type_id}?complete=${form.form_id}`} key={form.form_type_id}>
+                    <Link href={`/form/${form.form_id}`} key={form.form_id}>
                         <Card
                             className="w-[350px] h-[100px] mt-6 mx-2 hover:cursor-pointer"
                             key={form.form_id}
