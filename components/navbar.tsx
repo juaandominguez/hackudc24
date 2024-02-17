@@ -8,7 +8,7 @@ const Navbar = async () => {
     const { data: { user }, error } = await supabase.auth.getUser()
     return (
         <nav className='flex justify-end mx-auto w-[50vw] mt-6'>
-            {user ? <LoggedAvatar /> : <UnloggedAvatar />}
+            {user ? <LoggedAvatar user={user} /> : <UnloggedAvatar />}
         </nav>
     )
 }

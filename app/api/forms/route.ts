@@ -32,26 +32,10 @@ export async function POST(request: Request) {
       { status: 400 }
     );
   }
-  if(!form_id){
-    return supabase
-    .from("form")
-    .insert({
-      form_type_id,
-      title_field,
-      form_fields,
-    })
-    .then(({ data, error }) => {
-      if (error) {
-        return NextResponse.json({ error }, { status: 500 });
-      } else {
-        console.log(data);
-        return NextResponse.json(
-          { message: "Form type created" },
-          { status: 201 }
-        );
-      }
-    });
-  }
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return supabase
     .from("form")
     .insert({
@@ -59,6 +43,7 @@ export async function POST(request: Request) {
       form_type_id,
       title_field,
       form_fields,
+      user_id: user?.id,
     })
     .then(({ data, error }) => {
       if (error) {

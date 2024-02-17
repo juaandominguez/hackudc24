@@ -13,13 +13,13 @@ const UnloggedAvatar = () => {
             {showDialog === "login" ? (
                 <LoginDialog isOpen={isDialogOpen} setIsOpen={setIsDialogOpen} setShowDialog={setShowDialog}>
                     <Avatar className="cursor-pointer w-16 h-16" role="button">
-                        <AvatarFallback>J</AvatarFallback>
+                        <AvatarFallback>@</AvatarFallback>
                     </Avatar>
                 </LoginDialog>
             ) : (
                 <RegisterDialog isOpen={isDialogOpen} setIsOpen={setIsDialogOpen} setShowDialog={setShowDialog}>
                     <Avatar className="cursor-pointer w-16 h-16" role="button">
-                        <AvatarFallback>J</AvatarFallback>
+                        <AvatarFallback>@</AvatarFallback>
                     </Avatar>
                 </RegisterDialog>
 

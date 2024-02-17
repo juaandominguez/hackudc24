@@ -5,7 +5,13 @@ import { Avatar, AvatarFallback } from '../ui/avatar'
 import { History, LogOut } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-const LoggedAvatar = () => {
+import Link from 'next/link'
+
+interface LoggedAvatarProps {
+    user: any
+}
+
+const LoggedAvatar: React.FC<LoggedAvatarProps> = ({ user }) => {
 
     const router = useRouter()
     const supabase = createClientComponentClient();
@@ -19,7 +25,7 @@ const LoggedAvatar = () => {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer w-16 h-16" role="button">
-                    <AvatarFallback>J</AvatarFallback>
+                    <AvatarFallback>{user.email[0].toUpperCase()}</AvatarFallback>
                 </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
@@ -28,7 +34,7 @@ const LoggedAvatar = () => {
                 <DropdownMenuGroup>
                     <DropdownMenuItem>
                         <History className="mr-2 h-4 w-4" />
-                        <span>History</span>
+                        <Link href="/history">History</Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
