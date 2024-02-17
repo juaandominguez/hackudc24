@@ -13,6 +13,7 @@ export async function GET(
     .from("form_type")
     .select("*")
     .eq("form_type_id", id)
+    .limit(1)
     .then(({ data, error }) => {
       if (error) {
         return NextResponse.json({ error }, { status: 500 });
@@ -23,7 +24,7 @@ export async function GET(
             { status: 404 }
           );
         }
-        return NextResponse.json(data);
+        return NextResponse.json(data[0]);
       }
     });
 }
