@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 import { Form, FormType, SpecificFormType } from "./types";
 
-const API_URL = "https://131b6ea8-87b5-4141-969d-29d7f4ad6b58.mock.pstmn.io";
+const API_URL = "http://localhost:3000";
 export const getAllFormTypes = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/v1/formTypes`);
+    const response = await fetch(`${API_URL}/api/formtypes`);
     const form: FormType[] = await response.json();
     return form;
   } catch (error) {
@@ -13,7 +13,7 @@ export const getAllFormTypes = async () => {
 };
 
 export const getFormTypeById = async (id: string) => {
-  const response = await fetch(`${API_URL}/api/v1/formTypes/${id}`);
+  const response = await fetch(`${API_URL}/api/formtypes/${id}`);
   if (response.status === 404) {
     notFound();
   }
@@ -22,7 +22,7 @@ export const getFormTypeById = async (id: string) => {
 };
 
 export const getAllForms: () => Promise<Form[]> = async () => {
-  const response = await fetch(`${API_URL}/api/v1/forms`);
+  const response = await fetch(`${API_URL}/api/forms`);
   const forms: Form[] | Form = await response.json();
   if (Array.isArray(forms)) {
     return forms;
@@ -31,7 +31,7 @@ export const getAllForms: () => Promise<Form[]> = async () => {
 };
 
 export const getFormById = async (id: string) => {
-  const response = await fetch(`${API_URL}/api/v1/forms/${id}`);
+  const response = await fetch(`${API_URL}/api/forms/${id}`);
   if (response.status === 404) {
     notFound();
   }
@@ -48,7 +48,7 @@ export const postForm = async (postForm: Form) => {
     body: JSON.stringify(postForm),
   };
 
-  const response = await fetch(`${API_URL}/api/v1/forms/`, options);
+  const response = await fetch(`${API_URL}/api/forms/`, options);
 
   return response;
 };
