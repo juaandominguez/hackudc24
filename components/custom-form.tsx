@@ -1,6 +1,6 @@
 "use client"
 import { SpecificFormType } from '@/lib/types'
-import React from 'react'
+import React, { useState } from 'react'
 import { Label } from './ui/label'
 import InputSelector from './inputs/inputSelector'
 import { Button } from './ui/button'
@@ -11,7 +11,7 @@ interface CustomFormProps {
 }
 
 const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
-
+    const [formValues, setFormValues] = useState<any[]>(Array.from({ length: data.form_fields.length }));
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -20,15 +20,19 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
         console.log(formValues);
     }
 
-    /*const handleVisible = (id: number | undefined, value: string | undefined) => {
+    const handleChange = (id: number, value: string) => {
+        setFormValues({ ...formValues, [id]: value });
+    }
+
+    const handleVisible = (id: number | undefined, value: string | undefined) => {
         if (!id || !value) return;
-        const element = document.getElementById(id.toString());
-        if (element?.nodeValue == value) {
+        const elementValue = formValues[id];
+        if (elementValue != value) {
             return "hidden"
         }
         else "flex"
     }
-*/
+
 
     return (
         <form className="w-full max-w-[600px]" onSubmit={(e) => handleSubmit(e)}>
@@ -37,10 +41,10 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                     {
                         data.form_groups?.map((group: any) => (
                             data.form_fields.filter((field: any) => field.field_group === group.group_id).toSorted((a, b) => a.field_order - b.field_order).map((field) => (
-                                <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 `}>
+                                <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 ${handleVisible(field.field_dependent_on?.field_id, field.field_dependent_on?.field_value)}`}>
                                     <Label className="mt-4 mx-4">{field.field_description}</Label>
                                     <InputSelector
-                                        id={field.field_name}
+                                        id={field.field_id}
                                         type={field.field_type}
                                         required={field.field_required}
                                         readonly={field.field_readonly}
@@ -48,6 +52,8 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                                         pattern={field?.field_validations?.format}
                                         name={field.field_name}
                                         options={field?.field_validations?.options}
+                                        value={formValues[field.field_id] || ''}
+                                        setValue={handleChange}
                                     /></div>
                             ))
                         ))
@@ -57,10 +63,10 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
 
                 data.form_fields?.toSorted((a, b) => a.field_order - b.field_order).map((field) => (
                     <div key={field.field_id}>
-                        <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 `}>
+                        <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 ${handleVisible(field.field_dependent_on?.field_id, field.field_dependent_on?.field_value)}`}>
                             <Label className="mt-4 mx-4">{field.field_description}</Label>
                             <InputSelector
-                                id={field.field_name}
+                                id={field.field_id}
                                 type={field.field_type}
                                 required={field.field_required}
                                 readonly={field.field_readonly}
@@ -68,6 +74,8 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                                 pattern={field?.field_validations?.format}
                                 name={field.field_name}
                                 options={field?.field_validations?.options}
+                                value={formValues[field.field_id] || ''}
+                                setValue={handleChange}
                             /></div>
                     </div>
                 ))

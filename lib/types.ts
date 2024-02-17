@@ -1,7 +1,7 @@
 interface FormField {
   field_id: number;
   field_name: string;
-  field_type: "text" | "number" | "date" | "selection" | "checkbox";
+  field_type: "text" | "number" | "date" | "select" | "checkbox";
   field_order: number;
   field_description: string;
   field_required: boolean;
