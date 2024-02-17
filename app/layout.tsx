@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "FormFlow",
   description: "Generate dynamic forms with ease",
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
@@ -17,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><link rel="icon" href="/favicon.ico" sizes="any" /></head>
       <body className={`${inter.className} antialiased dark`}>{children}<Toaster /></body>
     </html>
   );
