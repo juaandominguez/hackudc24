@@ -92,7 +92,6 @@ const RegisterDialog: React.FC<Props> = ({
                 }
                 else {
                     router.refresh()
-                    console.log('logged in');
                     setIsOpen(false)
                 }
             })

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Form, FormType, SpecificFormType } from "./types";
 
-const API_URL = "http://localhost:3000";
+const API_URL = process.env.NEXT_PUBLIC_URL;
 export const getAllFormTypes = async () => {
   try {
     const response = await fetch(`${API_URL}/api/formtypes`);
