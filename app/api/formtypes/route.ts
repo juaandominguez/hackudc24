@@ -53,7 +53,6 @@ export async function POST(request: Request) {
     form_type_name,
     title_field,
     form_type_description,
-    form_groups,
     form_fields,
   } = data;
   if (
@@ -61,7 +60,6 @@ export async function POST(request: Request) {
     !form_type_name ||
     !title_field ||
     !form_type_description ||
-    !form_groups ||
     !form_fields
   ) {
     return NextResponse.json(
@@ -77,7 +75,6 @@ export async function POST(request: Request) {
       form_type_name,
       title_field,
       form_type_description,
-      form_groups,
       form_fields,
     })
     .then(({ data, error }) => {
