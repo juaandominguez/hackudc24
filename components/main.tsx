@@ -28,7 +28,7 @@ const Main = async () => {
                     </Link>
                 ))}
             </div>
-        </>
+            </>
     );
 };
 
