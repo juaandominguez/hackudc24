@@ -8,6 +8,13 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
+  if (!id) {
+    return NextResponse.json(
+      { error: "Missing required fields" },
+      { status: 400 }
+    );
+  }
+
   const supabase = createRouteHandlerClient<Database>({ cookies });
   return supabase
     .from("form")

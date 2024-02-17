@@ -19,16 +19,16 @@ interface InputSelectorProps {
 
 const InputSelector: React.FC<InputSelectorProps> = ({ type, id, name, readonly, required, pattern = "^[A-Za-z0-9_]+$", options = [], min_length = 0, value, setValue }) => {
     if (type === "checkbox") {
-        return <CustomCheckbox id={id} name={name} required={required} readonly={readonly}  value={value} setValue={setValue} />
+        return <CustomCheckbox id={id} name={name} required={required} readonly={readonly} value={value} setValue={setValue} />
     }
     else if (type === "select") {
-        return <CustomSelect id={id} name={name} required={required} readonly={readonly}  options={options} value={value} setValue={setValue} />
+        return <CustomSelect id={id} name={name} required={required} readonly={readonly} options={options} value={value} setValue={setValue} />
     }
     else if (type === "date") {
-        return <DatePicker />
+        return <DatePicker id={id} value={value} setValue={setValue} />
     }
     else {
-        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} minLength={min_length} pattern={pattern} value={value} onChange={(e) => setValue(id, e.target.value)} />
+        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} minLength={min_length} pattern={pattern} value={value} onChange={(e) => setValue(id, e.target.value)} maxLength={500} />
     }
 }
 

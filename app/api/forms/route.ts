@@ -3,11 +3,32 @@ import { cookies } from "next/headers";
 import { Database } from "@/lib/database.types";
 import { NextResponse } from "next/server";
 import { Form, SpecificFormType } from "@/lib/types";
-export async function GET() {
+export async function GET(request: Request) {
+  const params = new URL(request.url).searchParams;
+  const page = params.get("page");
+
+  if ((page && isNaN(parseInt(page))) || (page && parseInt(page) < 1)) {
+    return NextResponse.json({ error: "Invalid page" }, { status: 400 });
+  }
   const supabase = createRouteHandlerClient<Database>({ cookies });
+
+  if (!page) {
+    return supabase
+      .from("form")
+      .select("*")
+      .then(({ data, error }) => {
+        if (error) {
+          return NextResponse.json({ error }, { status: 500 });
+        } else {
+          return NextResponse.json(data);
+        }
+      });
+  }
+
   return supabase
     .from("form")
     .select("*")
+    .range(9 * (parseInt(page) - 1), 9 * parseInt(page) - 1)
     .then(({ data, error }) => {
       if (error) {
         return NextResponse.json({ error }, { status: 500 });
@@ -20,6 +41,7 @@ export async function GET() {
 export async function POST(request: Request) {
   const supabase = createRouteHandlerClient<Database>({ cookies });
   let data: Form;
+
   try {
     data = await request.json();
   } catch (e) {

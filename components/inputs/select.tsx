@@ -22,7 +22,8 @@ interface CustomSelectProps {
 
 export const CustomSelect: React.FC<CustomSelectProps> = ({ id, name, required, readonly, options, value, setValue }) => {
     return (
-        <Select required={required} disabled={readonly} onValueChange={(e) => setValue(id, e)}>
+        <Select required={required} disabled={readonly} onValueChange={(e) => setValue(id, e)}
+            value={value}>
             <SelectTrigger className="w-full" id={`${id}`}>
                 <SelectValue />
             </SelectTrigger>

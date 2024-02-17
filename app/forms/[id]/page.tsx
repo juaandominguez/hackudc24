@@ -15,14 +15,14 @@ export default async function Page({ params }: { params: { id: String } }) {
       <div className="flex flex-row flex-wrap w-full mx-auto items-center justify-center">
         {data.form_fields?.map((field, index) =>
           field.field_value !== "" ? (
-            <Card className="w-[350px] h-[120px] mx-8 my-4" key={field.field_id}>
+            <Card className="w-[350px] h-[120px] mx-8 my-4" key={field?.field_id}>
               <CardHeader>
-                <CardTitle>{
+                <CardTitle className="truncate w-[320px]">{
                   dataName.form_fields.find(
-                    (id) => id.field_id.toString() === field.field_id.toString()
+                    (id) => id?.field_id?.toString() === field?.field_id?.toString()
                   )?.field_name
                 }</CardTitle>
-                <CardDescription>{field.field_value}{(typeof field.field_value === "boolean") ? (field.field_value ? "Yes" : "No") : ""}</CardDescription>
+                <CardDescription className="truncate w-[310px]">{field?.field_value}{(typeof field?.field_value === "boolean") ? (field?.field_value ? "Yes" : "No") : ""}</CardDescription>
               </CardHeader>
             </Card>
           ) : (
