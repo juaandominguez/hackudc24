@@ -55,13 +55,7 @@ export async function POST(request: Request) {
     form_type_description,
     form_fields,
   } = data;
-  if (
-    !form_type_id ||
-    !form_type_name ||
-    !title_field ||
-    !form_type_description ||
-    !form_fields
-  ) {
+  if (!form_type_name || !title_field || !form_fields) {
     return NextResponse.json(
       { error: "Missing required fields" },
       { status: 400 }
@@ -71,14 +65,13 @@ export async function POST(request: Request) {
   return supabase
     .from("form_type")
     .insert({
-      form_type_id,
       form_type_name,
       title_field,
-      form_type_description,
       form_fields,
     })
     .then(({ data, error }) => {
       if (error) {
+        console.log(error);
         return NextResponse.json({ error }, { status: 500 });
       } else {
         return NextResponse.json(

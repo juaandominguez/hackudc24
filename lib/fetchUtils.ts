@@ -52,3 +52,17 @@ export const postForm = async (postForm: {}) => {
 
   return response;
 };
+
+export const postSchema = async (postForm: {}) => {
+  const options: RequestInit = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(postForm),
+  };
+
+  const response = await fetch(`${API_URL}/api/formtypes/`, options);
+
+  return response;
+};
