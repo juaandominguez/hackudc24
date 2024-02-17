@@ -27,8 +27,8 @@ const InputSelector: React.FC<InputSelectorProps> = ({ type, id, name, readonly,
         return <DatePicker />
     }
     else {
-        console.log(pattern)
-        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} defaultValue={defaultValue} pattern={pattern} />
+        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} defaultValue={defaultValue} />
+        //PATTERN
     }
 }
 
