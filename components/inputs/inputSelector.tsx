@@ -13,10 +13,10 @@ interface InputSelectorProps {
     defaultValue: string
     pattern?: string
     options?: string[]
-    //Dependent on
+    min_length?: number;
 }
 
-const InputSelector: React.FC<InputSelectorProps> = ({ type, id, name, readonly, required, defaultValue, pattern = "", options = [] }) => {
+const InputSelector: React.FC<InputSelectorProps> = ({ type, id, name, readonly, required, defaultValue, pattern = "", options = [], min_length = 0 }) => {
     if (type === "checkbox") {
         return <CustomCheckbox id={id} name={name} required={required} readonly={readonly} defaultValue={!!defaultValue} />
     }
@@ -27,7 +27,7 @@ const InputSelector: React.FC<InputSelectorProps> = ({ type, id, name, readonly,
         return <DatePicker />
     }
     else {
-        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} defaultValue={defaultValue} />
+        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} defaultValue={defaultValue} minLength={min_length} maxLength={max_length} />
         //PATTERN
     }
 }

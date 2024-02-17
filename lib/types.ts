@@ -11,6 +11,7 @@ interface FormField {
   field_validations: {
     format?: string;
     options?: string[];
+    min_length?: number;
   };
   field_dependent_on?: {
     field_id: number;
