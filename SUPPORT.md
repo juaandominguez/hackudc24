@@ -2,7 +2,7 @@
 SPDX-License-Identifier: LICENSE.md
 -->
 
-# DOCS
+# SUPPORT
 
 ## How to file issues and get help
 
