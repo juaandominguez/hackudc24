@@ -20,7 +20,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
         console.log(formValues);
     }
 
-    const handleVisible = (id: number | undefined, value: string | undefined) => {
+    /*const handleVisible = (id: number | undefined, value: string | undefined) => {
         if (!id || !value) return;
         const element = document.getElementById(id.toString());
         if (element?.nodeValue == value) {
@@ -28,7 +28,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
         }
         else "flex"
     }
-
+*/
 
     return (
         <form className="w-full max-w-[600px]" onSubmit={(e) => handleSubmit(e)}>
@@ -37,7 +37,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                     {
                         data.form_groups?.map((group: any) => (
                             data.form_fields.filter((field: any) => field.field_group === group.group_id).toSorted((a, b) => a.field_order - b.field_order).map((field) => (
-                                <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 ${handleVisible(field.field_dependent_on?.field_id, field.field_dependent_on?.field_value)}`}>
+                                <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 `}>
                                     <Label className="mt-4 mx-4">{field.field_description}</Label>
                                     <InputSelector
                                         id={field.field_name}
@@ -57,7 +57,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
 
                 data.form_fields?.toSorted((a, b) => a.field_order - b.field_order).map((field) => (
                     <div key={field.field_id}>
-                        <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 ${handleVisible(field.field_dependent_on?.field_id, field.field_dependent_on?.field_value)}`}>
+                        <div key={field.field_id} className={`flex flex-col items-start justify-center space-y-3 `}>
                             <Label className="mt-4 mx-4">{field.field_description}</Label>
                             <InputSelector
                                 id={field.field_name}
