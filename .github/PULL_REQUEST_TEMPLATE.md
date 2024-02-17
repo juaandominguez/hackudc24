@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: LICENSE.md
+-->
+
 # PR Checklist
 
 Please check if your PR fulfills the following requirements:

@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: LICENSE.md
+-->
+
 # Contributing
 
 Thank you for your interest in contributing to this project! We value and appreciate any contributions you can make.
