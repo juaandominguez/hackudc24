@@ -14,7 +14,7 @@ const Main = async () => {
             </h2>
             <div className="flex flex-row flex-wrap justify-center max-w-[1200px] m-auto">
                 {forms?.map((form) => (
-                    <Link href={`/schema/${form.form_type_id}`} key={form.form_type_id}>
+                    <Link href={`/schemas/${form.form_type_id}`} key={form.form_type_id}>
                         <CustomCard name={form.form_type_name} />
                     </Link>
                 ))}
@@ -24,7 +24,7 @@ const Main = async () => {
             </h2>
             <div className="flex flex-row flex-wrap justify-center max-w-[1200px] m-auto">
                 {completedForm?.map((form) => (
-                    <Link href={`/form/${form.form_id}`} key={form.form_id}>
+                    <Link href={`/forms/${form.form_id}`} key={form.form_id}>
                         <CustomCard name={form.title_field} />
                     </Link>
                 ))}

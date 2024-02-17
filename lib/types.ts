@@ -50,3 +50,5 @@ export interface Form {
     field_value: string;
   }[];
 }
+
+export type Dialogs = "login" | "register";
