@@ -4,6 +4,8 @@ SPDX-License-Identifier: LICENSE.md
 
 # DOCS
 
-## Como crear incidencias y recibir ayuda
+## How to file issues and get help
 
-Este proyecto usa GitHub Issues para rastrear errores y peticiones de mejoras. Por favor, busque las incidencias ya existentes para evitar duplicados. Para nuevas incidencias, archive su petición de error o de mejora como una nueva Incidencia.
+This project uses GitHub Issues to track bugs and feature requests. Please search the existing
+issues before filing new issues to avoid duplicates.  For new issues, file your bug or
+feature request as a new Issue.
