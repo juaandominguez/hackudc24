@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 "use client"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"

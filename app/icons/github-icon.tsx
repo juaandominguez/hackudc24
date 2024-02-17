@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 interface Props {
     className?: string
 }

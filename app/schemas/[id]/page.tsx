@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import CustomForm from "@/components/custom-form";
 import InputSelector from "@/components/inputs/inputSelector";
 import { Button } from "@/components/ui/button";

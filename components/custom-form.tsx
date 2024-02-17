@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 "use client";
 import { SpecificFormType } from "@/lib/types";
 import React, { useState } from "react";

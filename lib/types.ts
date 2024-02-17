@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 interface FormField {
   field_id: number;
   field_name: string;

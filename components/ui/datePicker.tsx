@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 "use client"
 
 import * as React from "react"

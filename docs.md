@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: LICENSE.md
+-->
+
 # DOCS
 
 ## Como crear incidencias y recibir ayuda

@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import type { Config } from "tailwindcss";
 
 const config = {

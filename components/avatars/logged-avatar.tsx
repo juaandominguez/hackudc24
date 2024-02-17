@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 "use client"
 import React from 'react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../ui/dropdown-menu'

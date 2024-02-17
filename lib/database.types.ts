@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 export type Json =
   | string
   | number

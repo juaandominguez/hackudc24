@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import { cn } from "@/lib/utils"
 
 function Skeleton({

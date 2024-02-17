@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import { notFound } from "next/navigation";
 import { Form, FormType, SpecificFormType } from "./types";
 

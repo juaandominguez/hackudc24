@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import React from 'react'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'

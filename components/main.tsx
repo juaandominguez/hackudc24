@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import React from "react";
 import { getAllFormTypes, getAllForms } from "@/lib/fetchUtils";
 

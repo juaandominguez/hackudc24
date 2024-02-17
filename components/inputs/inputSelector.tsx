@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import React from 'react'
 import { Input } from '../ui/input';
 import { DatePicker } from '../ui/datePicker';

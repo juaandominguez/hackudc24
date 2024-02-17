@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";

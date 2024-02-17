@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import React from 'react'
 import LoggedAvatar from './avatars/logged-avatar'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'

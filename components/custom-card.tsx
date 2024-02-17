@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import React from 'react'
 import { Card, CardHeader, CardTitle } from './ui/card'
 

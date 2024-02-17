@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 import { NextResponse } from "next/server";
 

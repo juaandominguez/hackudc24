@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: LICENSE.md
+-->
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge

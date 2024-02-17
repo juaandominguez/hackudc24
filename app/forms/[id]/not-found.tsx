@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import React from 'react'

@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: LICENSE.md
+-->
+
 # Security Policy
 
 ## Supported Versions

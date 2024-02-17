@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LICENSE.md
+
 "use client"
 import React, { useState } from 'react'
 import { Avatar, AvatarFallback } from '../ui/avatar'
