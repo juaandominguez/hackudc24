@@ -124,11 +124,11 @@ We welcome contributions from the community! If you'd like to contribute, please
 
 ## Authors
 
--Juan Domínguez Rodríguez
--Javier Miguel Sánchez
--Diego Dopazo García
--Xabier Xoán Carricoba Muñoa
+   - Juan Domínguez Rodríguez
+   - Javier Miguel Sánchez
+   - Diego Dopazo García
+   - Xabier Xoán Carricoba Muñoa
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [Apache License 2.0](./LICENSE).
