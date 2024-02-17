@@ -1,11 +1,12 @@
+"use client"
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import React from 'react'
 
-const NotFound = () => {
+const Error = () => {
     return (
-        <main className='min-h-screen w-screen justify-center flex items-center flex-col'>
-            <h1 className='text-5xl'>Schema not found</h1>
+        <main className='min-h-dvh w-screen flex flex-col items-center justify-center'>
+            <h1 className='text-5xl font-bold text-center'>Internal error</h1>
             <Link href='/' className='mt-8'>
                 <Button className='text-2xl py-9 px-16'>Home Screen</Button>
             </Link>
@@ -13,4 +14,4 @@ const NotFound = () => {
     )
 }
 
-export default NotFound
+export default Error

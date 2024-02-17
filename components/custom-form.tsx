@@ -14,7 +14,7 @@ interface CustomFormProps {
 
 const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
     const [formValues, setFormValues] = useState<any[]>(
-        Array.from({ length: data.form_fields.length })
+        Array.from({ length: data?.form_fields?.length })
     );
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -26,14 +26,14 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                 field_value: value,
             }));
         const query = {
-            form_type_id: data.form_type_id,
-            title_field: data.title_field.field_description,
+            form_type_id: data?.form_type_id,
+            title_field: data?.title_field.field_description,
             form_fields: formFields,
         };
         try {
             postForm(query);
             toast.success("Form submitted successfully");
-            setFormValues(Array.from({ length: data.form_fields.length }));
+            setFormValues(Array.from({ length: data?.form_fields.length }));
         }
         catch (error) {
             toast.error("Error submitting form");
@@ -55,10 +55,10 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
 
     return (
         <form className="w-full max-w-[600px]" onSubmit={(e) => handleSubmit(e)}>
-            {data.form_groups?.toSorted((a, b) => a.group_order - b.group_order) ? (
+            {data?.form_groups?.toSorted((a, b) => a.group_order - b.group_order) ? (
                 <>
-                    {data.form_groups?.map((group: any) =>
-                        data.form_fields
+                    {data?.form_groups?.map((group: any) =>
+                        data?.form_fields
                             .filter((field: any) => field.field_group === group.group_id)
                             .toSorted((a, b) => a.field_order - b.field_order)
                             .map((field) => (
@@ -72,7 +72,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                                         : "hidden"
                                         }`}
                                 >
-                                    <Label className="mt-4 mx-4">{field.field_description}</Label>
+                                    <Label className="mt-4 mx-4">{field.field_name}</Label>
                                     <InputSelector
                                         id={field.field_id}
                                         type={field.field_type}
@@ -87,6 +87,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                                         pattern={field?.field_validations?.format}
                                         name={field.field_name}
                                         options={field?.field_validations?.options}
+                                        placeholder={field?.field_description}
                                         value={formValues[field.field_id] || ""}
                                         setValue={handleChange}
                                     />
@@ -95,12 +96,11 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                     )}
                 </>
             ) : (
-                data.form_fields
+                data?.form_fields
                     ?.toSorted((a, b) => a.field_order - b.field_order)
                     .map((field) => (
                         <div key={field.field_id}>
                             <div
-                                key={field.field_id}
                                 className={`flex flex-col items-start justify-center space-y-3 ${handleVisible(
                                     field.field_dependent_on?.field_id,
                                     field.field_dependent_on?.field_value

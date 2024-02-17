@@ -18,14 +18,15 @@ interface CustomSelectProps {
     options: string[]
     value: string
     setValue: (id: number, value: string) => void
+    placeholder?: string
 }
 
-export const CustomSelect: React.FC<CustomSelectProps> = ({ id, name, required, readonly, options, value, setValue }) => {
+export const CustomSelect: React.FC<CustomSelectProps> = ({ id, name, required, readonly, options, value, setValue, placeholder = "" }) => {
     return (
         <Select required={required} disabled={readonly} onValueChange={(e) => setValue(id, e)}
             value={value}>
             <SelectTrigger className="w-full" id={`${id}`}>
-                <SelectValue />
+                <SelectValue placeholder={placeholder} />
             </SelectTrigger>
             <SelectContent>
                 <SelectGroup>
