@@ -18,6 +18,10 @@ const LoggedAvatar: React.FC<LoggedAvatarProps> = ({ user }) => {
     const router = useRouter()
     const supabase = createClientComponentClient();
 
+    const handleHistory = () => {
+        router.push('/history')
+    }
+
     const handleSignOut = async () => {
         await supabase.auth.signOut()
         router.refresh()
@@ -34,9 +38,9 @@ const LoggedAvatar: React.FC<LoggedAvatarProps> = ({ user }) => {
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                    <DropdownMenuItem>
+                    <DropdownMenuItem onClick={handleHistory}>
                         <History className="mr-2 h-4 w-4" />
-                        <Link href="/history">History</Link>
+                        <span>History</span>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
