@@ -12,7 +12,7 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
 
-const options = ["text", "number", "date", "select", "checkbox"]
+const options = ["text", "number", "date", "checkbox"]
 
 const Page = () => {
     const [numberOfInputs, setNumberOfInputs] = useState(1)
@@ -93,7 +93,7 @@ const Page = () => {
                     field_type: type,
                     field_name: names[index],
                     field_required: requiredInputs[index],
-                    field_readonly: readonlyInputs[index]
+                    field_readonly: readonlyInputs[index],
                 }))
             })
             toast.success('Schema created successfully')

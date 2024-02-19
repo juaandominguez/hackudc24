@@ -31,7 +31,7 @@ const InputSelector: React.FC<InputSelectorProps> = ({ type, id, name, readonly,
         return <DatePicker id={id} value={value} setValue={setValue} />
     }
     else {
-        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} minLength={min_length} pattern={pattern} value={value} onChange={(e) => setValue(id, e.target.value)} maxLength={500} placeholder={placeholder} />
+        return <Input id={`${id}`} name={name} readOnly={readonly} required={required} minLength={min_length} pattern={pattern} value={value} onChange={(e) => setValue(id, e.target.value)} maxLength={500} placeholder={placeholder} type={type} />
     }
 }
 

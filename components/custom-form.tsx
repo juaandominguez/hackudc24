@@ -111,7 +111,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ data }) => {
                                     : "hidden"
                                     }`}
                             >
-                                <Label className="mt-4 mx-4">{field.field_description}</Label>
+                                <Label className="mt-4 mx-4">{field.field_name}</Label>
                                 <InputSelector
                                     id={field.field_id}
                                     type={field.field_type}

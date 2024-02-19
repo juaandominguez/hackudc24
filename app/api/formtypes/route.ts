@@ -50,13 +50,7 @@ export async function POST(request: Request) {
   } catch (e) {
     return NextResponse.json({ error: "Invalid Types" }, { status: 400 });
   }
-  const {
-    form_type_id,
-    form_type_name,
-    title_field,
-    form_type_description,
-    form_fields,
-  } = data;
+  const { form_type_name, title_field, form_fields } = data;
   if (!form_type_name || !title_field || !form_fields) {
     return NextResponse.json(
       { error: "Missing required fields" },
